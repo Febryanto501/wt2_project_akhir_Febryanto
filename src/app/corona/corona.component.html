@@ -1,0 +1,11 @@
+<ActionBar title="Covid-19"> </ActionBar>
+<ListView [items]="$coronas | async" (loadMoreItems)="loadMore()">
+  <ng-template let-corona="item">
+    <StackLayout>
+      <Label
+        [nsRouterLink]="['/corona',corona.country]"
+        [text]="corona.country"
+      ></Label>
+    </StackLayout>
+  </ng-template>
+</ListView>
